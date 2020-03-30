@@ -1,7 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
 import Button from './button';
-import {Search, Bookmark, PieChart} from './icons';
+import Box from './box';
+import {Search, Bookmark, Home} from './icons';
 
 function tabBar({state, descriptors, navigation}) {
   return (
@@ -30,13 +31,27 @@ function tabBar({state, descriptors, navigation}) {
         };
 
         return label === 'Search' ? (
-          <Button flex={1} onPress={onPress}>
-            <Search />
-          </Button>
+          <Box
+            bg="#f1f1f1"
+            borderRadius="full"
+            size={6}
+            p={40}
+            mt={-20}
+            alignItems="center"
+            justifyContent="center">
+            <Button
+              size={56}
+              bg={'white'}
+              p={30}
+              borderRadius="full"
+              onPress={onPress}>
+              <Search stroke="red" />
+            </Button>
+          </Box>
         ) : (
           <Button height={56} flex={1} onPress={onPress}>
-            {label === 'History' && <Bookmark />}
-            {label === 'Favorite' && <PieChart />}
+            {label === 'Home' && <Home stroke="gray" />}
+            {label === 'News' && <Bookmark stroke="gray" />}
           </Button>
         );
       })}
