@@ -36,7 +36,7 @@ function SearchComponent() {
           onFocus={() => setFocus(true)}
           value={value}
         />
-        <Button position="absolute" top={18} left={45}>
+        <Button position="absolute" top={18} left={42}>
           <Search color={theme.colors.black} />
         </Button>
         {focus && value.length > 0 && (
