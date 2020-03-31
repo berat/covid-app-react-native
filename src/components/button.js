@@ -7,6 +7,7 @@ import {
   space,
   flexbox,
   layout,
+  position,
   borderRadius,
 } from 'styled-system';
 
@@ -16,6 +17,7 @@ const Button = styled(TouchableOpacity)(
     size,
     flexbox,
     space,
+    position,
     layout,
     borderRadius,
   ),

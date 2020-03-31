@@ -7,6 +7,9 @@ const radii = {
 
 const colors = {
   header: '#2a003e',
+  gray: '#dadada',
+  black: '#444444',
+  red: '#b92d2d',
 };
 
 export default {

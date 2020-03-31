@@ -32,7 +32,7 @@ function App() {
       <Box flex={1} as={SafeAreaView}>
         <NavigationContainer>
           <Tab.Navigator
-            initialRouteName="Home"
+            initialRouteName="Search"
             tabBar={props => <TabBar {...props} />}>
             <Tab.Screen name="Home" component={HomeView} />
             <Tab.Screen name="Search" component={SearchStack} />
