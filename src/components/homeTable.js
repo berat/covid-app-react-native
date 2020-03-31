@@ -2,7 +2,7 @@ import * as React from 'react';
 import Text from './text';
 import Box from './box';
 
-function TopDetail({children, ...props}) {
+export function TableMain({children, ...props}) {
   return (
     <Box alignItems="center" flexDirection="column" mt={-40} {...props}>
       <Box
@@ -50,38 +50,25 @@ function TopDetail({children, ...props}) {
           px={10}
           borderBottomWidth="1px"
           borderColor="#dadada">
-          <Text width={'25%'}>Türkiye</Text>
-          <Text width={'25%'}>124</Text>
-          <Text width={'25%'}>2</Text>
-          <Text width={'25%'}>20</Text>
-        </Box>
-        <Box
-          flexDirection="row"
-          justifyContent="space-between"
-          py={20}
-          px={10}
-          borderBottomWidth="1px"
-          borderColor="#dadada">
-          <Text>Türkiye</Text>
-          <Text>124</Text>
-          <Text>2</Text>
-          <Text>20</Text>
-        </Box>
-        <Box
-          flexDirection="row"
-          justifyContent="space-between"
-          py={20}
-          px={10}
-          borderBottomWidth="1px"
-          borderColor="#dadada">
-          <Text>Türkiye</Text>
-          <Text>124</Text>
-          <Text>2</Text>
-          <Text>20</Text>
+          {children}
         </Box>
       </Box>
     </Box>
   );
 }
 
-export default TopDetail;
+export function TableCountry({children}) {
+  return <Text width={'25%'}>{children}</Text>;
+}
+
+export function TableCase({children}) {
+  return <Text width={'25%'}>{children}</Text>;
+}
+
+export function TableDeath({children}) {
+  return <Text width={'25%'}>{children}</Text>;
+}
+
+export function TableInject({children}) {
+  return <Text width={'25%'}>{children}</Text>;
+}

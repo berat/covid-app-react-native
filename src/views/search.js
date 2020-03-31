@@ -1,4 +1,4 @@
-import {Button, SafeAreView, Linking} from 'react-native';
+import {SafeAreView, Linking} from 'react-native';
 import * as React from 'react';
 import Box from '../components/box';
 import Bg from '../components/bg';
@@ -6,7 +6,7 @@ import Logo from '../components/logo';
 import Search from '../components/search';
 import {CardComponent, CardTitle, CardContent} from '../components/card';
 
-function SearchView({navigation}) {
+function SearchView() {
   return (
     <Box as={SafeAreView} flex={1}>
       <Box height={220} width={'100%'} position="relative" zIndex={1}>
@@ -32,22 +32,6 @@ function SearchView({navigation}) {
           <CardTitle>Başlık 1</CardTitle>
           <CardContent>içerik bir iki üc dort beş altı yedi sekiz</CardContent>
         </CardComponent>
-        <CardComponent>
-          <CardTitle>Başlık 1</CardTitle>
-          <CardContent>içerik bir iki üc dort beş altı yedi sekiz</CardContent>
-        </CardComponent>
-        <CardComponent>
-          <CardTitle>Başlık 1</CardTitle>
-          <CardContent>içerik bir iki üc dort beş altı yedi sekiz</CardContent>
-        </CardComponent>
-        <CardComponent>
-          <CardTitle>Başlık 1</CardTitle>
-          <CardContent>içerik bir iki üc dort beş altı yedi sekiz</CardContent>
-        </CardComponent>
-        <Button
-          title="Go to Details"
-          onPress={() => navigation.navigate('Detail')}
-        />
       </Box>
     </Box>
   );

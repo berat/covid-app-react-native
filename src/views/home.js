@@ -1,9 +1,15 @@
-import {Button, SafeAreView} from 'react-native';
+import {SafeAreView} from 'react-native';
 import * as React from 'react';
 
 import Text from '../components/text';
 import TopDetail from '../components/topDetail';
-import HomeTable from '../components/homeTable';
+import {
+  TableMain,
+  TableCase,
+  TableCountry,
+  TableDeath,
+  TableInject,
+} from '../components/homeTable';
 import Box from '../components/box';
 import Bg from '../components/bg';
 import Logo from '../components/logo';
@@ -36,7 +42,12 @@ function HomeView() {
         </TopDetail>
       </Box>
       <Box position="relative" zIndex={2} mt={80}>
-        <HomeTable />
+        <TableMain>
+          <TableCountry>Türkiye</TableCountry>
+          <TableCase>252</TableCase>
+          <TableDeath>2</TableDeath>
+          <TableInject>20</TableInject>
+        </TableMain>
       </Box>
     </Box>
   );

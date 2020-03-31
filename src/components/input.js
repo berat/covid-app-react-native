@@ -10,7 +10,7 @@ import {
   border,
   borderRadius,
 } from 'styled-system';
-import theme from '../utils/theme'
+import theme from '../utils/theme';
 
 const Box = styled(TextInput).attrs(props => ({
   placeholderTextColor: theme.colors[props.placeholderTextColor] || '#999',
