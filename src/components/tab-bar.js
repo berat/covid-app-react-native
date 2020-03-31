@@ -1,12 +1,11 @@
 import React from 'react';
-import {View} from 'react-native';
 import Button from './button';
 import Box from './box';
 import {Search, Bookmark, Home} from './icons';
 
 function tabBar({state, descriptors, navigation}) {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <Box flexDirection="row">
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -41,21 +40,25 @@ function tabBar({state, descriptors, navigation}) {
             justifyContent="center">
             <Button
               size={56}
-              bg={'white'}
+              bg={isFocused ? 'red' : 'white'}
               p={30}
               borderRadius="full"
               onPress={onPress}>
-              <Search stroke="red" />
+              <Search stroke={isFocused ? 'white' : 'red'} />
             </Button>
           </Box>
         ) : (
           <Button height={56} flex={1} onPress={onPress}>
-            {label === 'Home' && <Home stroke="gray" />}
-            {label === 'News' && <Bookmark stroke="gray" />}
+            {label === 'Home' && (
+              <Home stroke={isFocused ? '#2b2b2b' : 'gray'} />
+            )}
+            {label === 'News' && (
+              <Bookmark stroke={isFocused ? '#2b2b2b' : 'gray'} />
+            )}
           </Button>
         );
       })}
-    </View>
+    </Box>
   );
 }
 
