@@ -41,7 +41,7 @@ function lastStatus() {
           12
         </Text>
         <Text fontSize={18} color="#65af58">
-          Enjekte
+          İyileşen
         </Text>
       </Box>
     </Box>

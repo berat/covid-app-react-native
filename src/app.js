@@ -29,7 +29,6 @@ function SearchStack() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box flex={1} as={SafeAreaView}>
         <NavigationContainer>
           <Tab.Navigator
             initialRouteName="Search"
@@ -39,7 +38,6 @@ function App() {
             <Tab.Screen name="News" component={NewsView} />
           </Tab.Navigator>
         </NavigationContainer>
-      </Box>
     </ThemeProvider>
   );
 }

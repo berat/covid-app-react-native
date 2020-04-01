@@ -34,7 +34,7 @@ export function TableMain({children, ...props}) {
           Ölüm
         </Text>
         <Text fontSize={16} fontWeight="bold">
-          Enjekte
+          İyileşen
         </Text>
       </Box>
       <Box

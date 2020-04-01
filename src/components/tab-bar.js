@@ -5,7 +5,7 @@ import {Search, Bookmark, Home} from './icons';
 
 function tabBar({state, descriptors, navigation}) {
   return (
-    <Box flexDirection="row">
+    <Box flexDirection="row" pb={20}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =

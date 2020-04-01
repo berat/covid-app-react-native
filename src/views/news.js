@@ -1,13 +1,15 @@
 import * as React from 'react';
-import {SafeAreView, Linking} from 'react-native';
+import {Linking, StatusBar} from 'react-native';
 import Box from '../components/box';
 import Bg from '../components/bg';
 import Logo from '../components/logo';
 import {CardComponent, CardContent, CardTitle} from '../components/card';
+import SafeAreaView from 'react-native-safe-area-view';
 
 function NewsView() {
   return (
-    <Box as={SafeAreView} flex={1}>
+    <Box as={SafeAreaView} bg="#293f92">
+      <StatusBar barStyle="light-content" backgroundColor="#293f92" />
       <Box height={220} width={'100%'} position="relative" zIndex={1}>
         <Bg>
           <Box
@@ -23,7 +25,12 @@ function NewsView() {
           </Box>
         </Bg>
       </Box>
-      <Box position="relative" zIndex={2} top={-30} alignItems="center">
+      <Box
+        position="relative"
+        zIndex={2}
+        mb={-200}
+        top={-30}
+        alignItems="center">
         <CardComponent onPress={() => Linking.openURL('http://google.com')}>
           <CardTitle>Başlık 1</CardTitle>
           <CardContent>içerik bir iki üc dort beş altı yedi sekiz</CardContent>
