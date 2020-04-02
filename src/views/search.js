@@ -46,6 +46,7 @@ function SearchView() {
         </Box>
         <Box alignItems="center">
           <FlatList
+            extraData={news}
             data={news}
             style={{
               width: '100%',

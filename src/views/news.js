@@ -62,6 +62,7 @@ function NewsView() {
               </CardContent>
             </CardComponent>
           )}
+          extraData={news}
           keyExtractor={item => item.id}
         />
       </Box>
