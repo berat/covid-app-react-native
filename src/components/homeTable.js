@@ -6,7 +6,7 @@ export function TableMain({children, ...props}) {
   return (
     <Box alignItems="center" flexDirection="column" mt={-40} {...props}>
       <Box
-        width="90%"
+        width="85%"
         flexDirection="row"
         alignItems="center"
         position="relative"
@@ -40,18 +40,10 @@ export function TableMain({children, ...props}) {
       <Box
         position="relative"
         zIndex={2}
-        width="90%"
+        width="85%"
         bg="white"
         flexDirection="column">
-        <Box
-          flexDirection="row"
-          justifyContent="space-between"
-          py={20}
-          px={10}
-          borderBottomWidth="1px"
-          borderColor="#dadada">
-          {children}
-        </Box>
+        <Box>{children}</Box>
       </Box>
     </Box>
   );

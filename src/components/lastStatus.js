@@ -8,7 +8,6 @@ function lastStatus() {
   const getStatus = async () => {
     const response = await fetch('https://corona.lmao.ninja/all');
     const data = await response.json();
-    console.log(data);
     setStatus(data);
   };
 
