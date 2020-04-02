@@ -29,15 +29,15 @@ function SearchStack() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator
-            initialRouteName="Search"
-            tabBar={props => <TabBar {...props} />}>
-            <Tab.Screen name="Home" component={HomeView} />
-            <Tab.Screen name="Search" component={SearchStack} />
-            <Tab.Screen name="News" component={NewsView} />
-          </Tab.Navigator>
-        </NavigationContainer>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Search"
+          tabBar={props => <TabBar {...props} />}>
+          <Tab.Screen name="Home" component={HomeView} />
+          <Tab.Screen name="Search" component={SearchStack} />
+          <Tab.Screen name="News" component={NewsView} />
+        </Tab.Navigator>
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
