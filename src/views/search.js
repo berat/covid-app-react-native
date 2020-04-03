@@ -9,17 +9,16 @@ import {CardComponent, CardTitle, CardContent} from '../components/card';
 
 function SearchView() {
   const [news, setNews] = React.useState(null);
-
-  const getNews = async () => {
+  const getList = async () => {
     const response = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&q=corona&apiKey=6053714b8d8b4f9bb128254669333953',
+      'http://newsapi.org/v2/top-headlines?country=tr&q=corona&apiKey=6053714b8d8b4f9bb128254669333953',
     );
     const data = await response.json();
-    setNews(data.articles.slice(0, 3));
+    setNews(data.articles.slice(0, 4));
   };
 
   React.useState(() => {
-    getNews();
+    getList();
   }, []);
 
   return (

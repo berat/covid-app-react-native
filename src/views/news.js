@@ -11,10 +11,10 @@ function NewsView() {
 
   const getNews = async () => {
     const response = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&q=corona&apiKey=6053714b8d8b4f9bb128254669333953',
+      'http://newsapi.org/v2/top-headlines?country=tr&q=corona&apiKey=6053714b8d8b4f9bb128254669333953',
     );
     const data = await response.json();
-    setNews(data.articles.slice(0, 10));
+    setNews(data.articles.slice(0, 8));
   };
 
   React.useState(() => {
@@ -45,7 +45,7 @@ function NewsView() {
         alignItems="center"
         bg="#f1f1f1"
         position="relative"
-        mb={-520}
+        mb={-20}
         zIndex={2}>
         <FlatList
           data={news}
