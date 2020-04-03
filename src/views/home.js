@@ -159,31 +159,37 @@ function HomeView() {
   return (
     <Box as={SafeAreaView} bg="#293f92" flex={1} position="relative" zIndex={1}>
       <StatusBar barStyle="light-content" backgroundColor="#293f92" />
-      <Box height={220} width={'100%'} position="relative" zIndex={1}>
-        <Bg>
-          <Box
-            flex={1}
-            flexDirection="row"
-            alignItems="center"
-            pl={40}
-            mt={-20}
-            justfiyContent="center">
-            <Logo color="white" fontWeight="bold" fontSize={34}>
-              COVİD APP
-            </Logo>
-          </Box>
-        </Bg>
-      </Box>
-      <Box flex={1} bg="#f1f1f1" position="relative" mb={-400} zIndex={2}>
-        <Box top={-40}>
-          <TopDetail>
-            <Text color="#9a9a9a" fontSize={15}>
-              Güncellenme: <Text color="#46689c">{lastDate}</Text>
-            </Text>
-            <LastStatus />
-          </TopDetail>
+      <ScrollView
+        contentContainerStyle={{
+          backgroundColor: '#f1f1f1',
+          flexGrow: 1,
+          paddingBottom: 100,
+          marginBottom: 50,
+        }}>
+        <Box height={220} width={'100%'} position="relative" zIndex={1}>
+          <Bg>
+            <Box
+              flex={1}
+              flexDirection="row"
+              alignItems="center"
+              pl={40}
+              mt={-20}
+              justfiyContent="center">
+              <Logo color="white" fontWeight="bold" fontSize={34}>
+                COVİD APP
+              </Logo>
+            </Box>
+          </Bg>
         </Box>
-        <ScrollView contentContainerStyle={{flexGrow:1}}>
+        <Box flex={1} bg="#f1f1f1" position="relative" zIndex={2}>
+          <Box top={-40}>
+            <TopDetail>
+              <Text color="#9a9a9a" fontSize={15}>
+                Güncellenme: <Text color="#46689c">{lastDate}</Text>
+              </Text>
+              <LastStatus />
+            </TopDetail>
+          </Box>
           <Box flexDirection="column">
             <Box top={40}>
               <TableMain>
@@ -212,8 +218,8 @@ function HomeView() {
               <PureChart data={data} type="pie" />
             </Box>
           </Box>
-        </ScrollView>
-      </Box>
+        </Box>
+      </ScrollView>
     </Box>
   );
 }
