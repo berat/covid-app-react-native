@@ -50,4 +50,4 @@ I wanted to practice with React native. What motivated me to write react native 
 <hr>
 
 ### Thank you for your watching
-To follow me [Github]([https://github.com/berat](https://github.com/berat)) - [Twitter]([https://twitter.com/beratbozkurt0](https://twitter.com/beratbozkurt0)) - [Linkedin]([https://www.linkedin.com/in/beratbozkurt/](https://www.linkedin.com/in/beratbozkurt/))
+To follow me [Github](https://github.com/berat) - [Twitter](https://twitter.com/beratbozkurt0) - [Linkedin](https://www.linkedin.com/in/beratbozkurt/)
