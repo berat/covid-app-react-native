@@ -5,7 +5,7 @@ import Box from './box';
 import {Search, Close} from './icons/index';
 import theme from '../utils/theme';
 
-function SearchComponent() {
+function SearchComponent({...params}) {
   const [focus, setFocus] = React.useState(false);
   const [value, setValue] = React.useState('');
   return (
@@ -32,9 +32,10 @@ function SearchComponent() {
             shadowRadius: 4.27,
             elevation: 2,
           }}
-          onChangeText={text => setValue(text)}
-          onFocus={() => setFocus(true)}
-          value={value}
+          // onChangeText={text => setValue(text)}
+          // onFocus={() => setFocus(true)}
+          // value={value}
+          {...params}
         />
         <Button position="absolute" top={18} left={42}>
           <Search color={theme.colors.black} />

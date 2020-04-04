@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StatusBar, FlatList, ScrollView, Dimensions} from 'react-native';
+import {StatusBar, FlatList, ScrollView} from 'react-native';
 import Text from '../components/text';
 import SafeAreaView from 'react-native-safe-area-view';
 import {
