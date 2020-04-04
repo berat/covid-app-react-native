@@ -11,9 +11,7 @@ import {CardComponent, CardTitle, CardContent} from '../components/card';
 function SearchView({navigation}) {
   const [isVisible, setISVisible] = React.useState(true);
   const [searchText, setSearchText] = React.useState('');
-  const [gecici, setGecici] = React.useState('');
-  const [news, setNews] = React.useState(null);
-  var liste = [
+  const [gecici, setGecici] = React.useState([
     'Afghanistan',
     'Albania',
     'Algeria',
@@ -263,7 +261,8 @@ function SearchView({navigation}) {
     'Zambia',
     'Zimbabwe',
     'Åland Islands',
-  ];
+  ]);
+  const [news, setNews] = React.useState(null);
 
   var newListe = [];
 
