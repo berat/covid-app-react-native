@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Linking, StatusBar, FlatList} from 'react-native';
 import Box from '../components/box';
 import Bg from '../components/bg';
+import {useFocusEffect} from '@react-navigation/native';
 import Logo from '../components/logo';
 import {CardComponent, CardContent, CardTitle} from '../components/card';
 import SafeAreaView from 'react-native-safe-area-view';
@@ -17,6 +18,11 @@ function NewsView() {
     setNews(data.articles.slice(0, 8));
   };
 
+  useFocusEffect(
+    React.useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+    }, []),
+  );
   React.useState(() => {
     getNews();
   }, []);
@@ -45,7 +51,7 @@ function NewsView() {
         alignItems="center"
         bg="#f1f1f1"
         position="relative"
-        mb={-20}
+        mb={-50}
         zIndex={2}>
         <FlatList
           data={news}

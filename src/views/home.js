@@ -2,6 +2,7 @@ import * as React from 'react';
 import {StatusBar, FlatList, ScrollView} from 'react-native';
 import Text from '../components/text';
 import SafeAreaView from 'react-native-safe-area-view';
+import {useFocusEffect} from '@react-navigation/native';
 import {
   TableMain,
   TableCase,
@@ -115,6 +116,11 @@ function HomeView() {
   // data.map(item => item);
   // };
 
+  useFocusEffect(
+    React.useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+    }, []),
+  );
   React.useState(() => {
     getList();
     // graph();

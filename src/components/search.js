@@ -2,7 +2,7 @@ import * as React from 'react';
 import Input from './input';
 import Button from './button';
 import Box from './box';
-import {Search, Close} from './icons/index';
+import {Search, Close} from './icons/';
 import theme from '../utils/theme';
 
 function SearchComponent({...params}) {
@@ -33,22 +33,13 @@ function SearchComponent({...params}) {
             elevation: 2,
           }}
           // onChangeText={text => setValue(text)}
-          // onFocus={() => setFocus(true)}
+          onFocus={() => setFocus(true)}
           // value={value}
           {...params}
         />
         <Button position="absolute" top={18} left={42}>
           <Search color={theme.colors.black} />
         </Button>
-        {focus && value.length > 0 && (
-          <Button
-            onPress={() => setValue('')}
-            position="absolute"
-            top={17}
-            right={45}>
-            <Close color={theme.colors.red} />
-          </Button>
-        )}
       </Box>
     </Box>
   );

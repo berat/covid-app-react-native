@@ -1,7 +1,11 @@
 import {Linking, StatusBar, FlatList} from 'react-native';
 import * as React from 'react';
+import {useFocusEffect} from '@react-navigation/native';
 import Box from '../components/box';
+import Button from '../components/button';
 import Text from '../components/text';
+import {Close} from '../components/icons';
+import theme from '../utils/theme';
 import Bg from '../components/bg';
 import Logo from '../components/logo';
 import Search from '../components/search';
@@ -278,6 +282,11 @@ function SearchView({navigation}) {
     getList();
   }, []);
 
+  useFocusEffect(
+    React.useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+    }, []),
+  );
   return (
     <Box as={SafeAreaView} bg="#293f92" flex={1} position="relative" zIndex={1}>
       <StatusBar barStyle="light-content" backgroundColor="#293f92" />
@@ -302,9 +311,9 @@ function SearchView({navigation}) {
             onFocus={() => setISVisible(false)}
             onChangeText={e => {
               setSearchText(e);
-              for (let i = 0; i < liste.length; i++) {
-                if (liste[i].indexOf(e) !== -1) {
-                  newListe.push(liste[i]);
+              for (let i = 0; i < gecici.length; i++) {
+                if (gecici[i].indexOf(e) !== -1) {
+                  newListe.push(gecici[i]);
                 }
               }
               setGecici(newListe);
@@ -312,6 +321,18 @@ function SearchView({navigation}) {
             }}
             value={searchText}
           />
+          {isVisible ? null : (
+            <Button
+              onPress={() => {
+                setISVisible(true);
+                setSearchText('');
+              }}
+              position="absolute"
+              top={17}
+              right={45}>
+              <Close color={theme.colors.red} />
+            </Button>
+          )}
         </Box>
         {isVisible ? (
           <Box alignItems="center">
@@ -335,7 +356,7 @@ function SearchView({navigation}) {
             />
           </Box>
         ) : (
-          <Box alignItems="center" width="100%">
+          <Box alignItems="center" width="90%">
             {console.log(newListe)}
             <FlatList
               data={gecici}
@@ -345,11 +366,13 @@ function SearchView({navigation}) {
                   flexDirection="row"
                   justifyContent="space-between"
                   py={20}
-                  width="90%"
                   px={10}
+                  minWidth="90%"
+                  maxWidth="90%"
                   borderBottomWidth="1px"
                   borderColor="#dadada">
                   <Text
+                    width="100%"
                     onPress={() =>
                       navigation.navigate('Detail', {
                         keyword: item,
