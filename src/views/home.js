@@ -37,6 +37,7 @@ function HomeView() {
   const [lastDate, setLastDate] = React.useState('');
   const [turkey, setTurkey] = React.useState('');
   const [load, setLoad] = React.useState(false);
+  const [grafik, setGrafik] = React.useState('');
   // const [confirmed, setConfirmed] = React.useState('');
   // const [deaths, setDeaths] = React.useState('');
   // const [deathsD, setDeathsD] = React.useState('');
@@ -48,16 +49,17 @@ function HomeView() {
     const lastUpdate = await fetch('https://corona.lmao.ninja/all');
     const dataDate = await lastUpdate.json();
     const data = await response.json();
+    setGrafik(dataDate);
     const tarih = new Date(dataDate.updated);
     setLastDate(
       `${tarih.getDate()} ${aylar[tarih.getMonth()]} ${tarih.getFullYear()}`,
     );
     // console.log(data.filter(item => item.country === 'Turkey'));
-    setTurkey(data.filter(item => item.country === 'Turkey'));
+    setTurkey(data.filter((item) => item.country === 'Turkey'));
     setLoad(true);
     setList(
       data.filter(
-        item =>
+        (item) =>
           item.country === 'Turkey' ||
           item.country === 'France' ||
           item.country === 'USA' ||
@@ -126,20 +128,22 @@ function HomeView() {
     // graph();
   }, [setLoad]);
 
+  console.log(grafik.cases)
+
   var data = load
     ? [
         {
-          value: turkey[0].cases,
+          value: grafik?.cases,
           label: 'Vaka',
           color: 'blue',
         },
         {
-          value: turkey[0].recovered,
+          value: grafik?.recovered,
           label: 'İyileşen',
           color: 'green',
         },
         {
-          value: turkey[0].deaths,
+          value: grafik?.deaths,
           label: 'Ölüm',
           color: 'red',
         },
@@ -216,7 +220,7 @@ function HomeView() {
                       <TableInject>{item.recovered}</TableInject>
                     </Box>
                   )}
-                  keyExtractor={item => item.id}
+                  keyExtractor={(item) => item.id}
                 />
               </TableMain>
             </Box>
