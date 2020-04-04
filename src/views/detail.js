@@ -49,21 +49,6 @@ function DetailView({route, navigation}) {
           label: 'Ölüm',
           color: 'red',
         },
-        {
-          value: 25555,
-          label: 'deqf',
-          color: 'green',
-        },
-        {
-          value: 25,
-          label: 'qefqf',
-          color: 'green',
-        },
-        {
-          value: 25,
-          label: 'htrhr',
-          color: 'green',
-        },
       ]
     : [
         {
