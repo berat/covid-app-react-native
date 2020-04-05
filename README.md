@@ -3,10 +3,10 @@
 ## Screenshot
 
 <div style="display:flex, flex-direction:row, justify-content: space-between">
-<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/home.png" width="250"/>
-<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/search.png" width="250"/>
-<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/search1.png" width="250"/>
-<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/news.png" width="250"/>
+<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/home.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/search.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/search1.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/berat/covid-app-react-native/master/screenshots/news.png" width="25%"/>
 </div>
 
 Türkçe - English
